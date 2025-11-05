@@ -20,14 +20,12 @@
         </nav>
     </header>
 
-
     <section class="hero hero-cadastro">
         <div class="hero-content">
             <h1>Cadastre-se como voluntário</h1>
             <p>Junte-se a nós e faça a diferença na vida de muitas pessoas!</p>
         </div>
     </section>
-
 
     <main>
         <section class="signup-section">
@@ -61,7 +59,8 @@
 
                     <div class="form-group">
                         <label for="telefone">Telefone *</label>
-                        <input type="tel" id="telefone" name="telefone" placeholder="(31) 99999-9999" inputmode="numeric" pattern="[0-9]*" maxlength="15" required>
+                        <!-- REMOVIDO pattern para aceitar qualquer formato -->
+                        <input type="tel" id="telefone" name="telefone" placeholder="(31) 99999-9999" inputmode="numeric" maxlength="15" required>
                     </div>
 
                     <div class="form-group">
@@ -107,7 +106,6 @@
             </form>
         </section>
 
-        <!-- SEÇÃO FAÇA UMA OFERTA -->
         <section class="oferta-section" style="background:#f7f7f7; padding:2rem; margin:2rem 0; border-radius:8px;">
             <h2>Faça uma Oferta</h2>
             <p><em>"Cada um contribua segundo propôs no coração, não com tristeza nem por necessidade; porque Deus ama a quem dá com alegria."</em></p>
@@ -125,8 +123,6 @@
                 <p style="color:#b22222; font-weight:bold;">* Estes dados são fictícios — substitua pelos reais antes de divulgar.</p>
             </div>
         </section>
-
-
     </main>
 
     <footer>
@@ -135,12 +131,10 @@
 
     <script src="script.js"></script>
     <script>
- 
         function toggleMenu() {
             const nav = document.getElementById('navMenu');
             nav.classList.toggle('active');
         }
-
 
         document.getElementById('cpf').addEventListener('input', function (e) {
             let value = e.target.value.replace(/\D/g, '');
@@ -150,7 +144,6 @@
             e.target.value = value;
         });
 
-        
         document.getElementById('telefone').addEventListener('input', function (e) {
             let value = e.target.value.replace(/\D/g, '');
             if (value.length > 10) {
