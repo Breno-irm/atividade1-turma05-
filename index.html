@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celeiro da Paz</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Botão na seção Hero */
+        .hero-btn {
+            display: inline-block;
+            margin-top: 30px; /* espaço acima do botão */
+            padding: 12px 25px; /* tamanho interno do botão */
+            background-color: #4aee5d; /* cor de fundo */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px; /* borda arredondada */
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .hero-btn:hover {
+            background-color: #45c847;
+            transform: translateY(-3px) scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <nav>
+            <div class="logo">&#9962; Celeiro Da Paz</div>
+            <button class="menu-toggle" onclick="toggleMenu()">≡</button>
+            <ul id="navMenu">
+                <li><a href="index.html" class="active">Início</a></li>
+                <li><a href="projeto.html">Projetos</a></li>
+                <li><a href="cafrastro.html">Cadastro de Voluntário</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero com imagem de fundo -->
+    <section class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>Alcançando vidas através de ações missionarias</h1>
+                <p>Nosso propósito é simples, mas poderoso: viver e compartilhar o amor transformador de Jesus Cristo.  
+                Acreditamos que a verdadeira paz vem d’Ele, e queremos que cada pessoa conheça esse amor que cura, restaura e dá sentido à vida.</p>
+                <a href="cafrastro.html" class="hero-btn">Quero ser voluntário</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section class="about">
+        <h2>Quem Somos</h2>
+        <p>Somos um projeto missionário da Igreja Batista Da Paz. Nossa missão é ser luz no mundo, acolhendo, servindo e anunciando que em Cristo há esperança para todos.</p>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Celeiro Da Paz. Todos os direitos reservados &#9962;</p>
+    </footer>
+
+    <script>
+        // Toggle menu para mobile
+        function toggleMenu() {
+            const nav = document.getElementById('navMenu');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
+
