@@ -20,7 +20,7 @@
         </nav>
     </header>
 
-    <!-- Hero -->
+
     <section class="hero hero-cadastro">
         <div class="hero-content">
             <h1>Cadastre-se como voluntário</h1>
@@ -28,7 +28,7 @@
         </div>
     </section>
 
-    <!-- Formulário de Cadastro -->
+
     <main>
         <section class="signup-section">
             <h2>Cadastro de Voluntários</h2>
@@ -125,7 +125,7 @@
                 <p style="color:#b22222; font-weight:bold;">* Estes dados são fictícios — substitua pelos reais antes de divulgar.</p>
             </div>
         </section>
-        <!-- /FIM SEÇÃO FAÇA UMA OFERTA -->
+
 
     </main>
 
@@ -135,13 +135,13 @@
 
     <script src="script.js"></script>
     <script>
-        // Toggle menu mobile
+ 
         function toggleMenu() {
             const nav = document.getElementById('navMenu');
             nav.classList.toggle('active');
         }
 
-        // Máscara CPF
+
         document.getElementById('cpf').addEventListener('input', function (e) {
             let value = e.target.value.replace(/\D/g, '');
             value = value.replace(/(\d{3})(\d)/, '$1.$2');
@@ -150,7 +150,7 @@
             e.target.value = value;
         });
 
-        // Máscara Telefone
+        
         document.getElementById('telefone').addEventListener('input', function (e) {
             let value = e.target.value.replace(/\D/g, '');
             if (value.length > 10) {

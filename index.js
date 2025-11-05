@@ -1,44 +1,44 @@
-// ==================== Menu Mobile ====================
+
 function toggleMenu() {
     const menu = document.getElementById('navMenu');
     menu.classList.toggle('active');
 }
 
-// ==================== Scroll Suave ====================
+
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (!section) return;
 
-    const headerHeight = 70; // altura do header fixa
+    const headerHeight = 70; 
     const sectionPosition = section.offsetTop - headerHeight;
 
     window.scrollTo({ top: sectionPosition, behavior: 'smooth' });
 
-    // Fecha o menu mobile após clicar
+
     const menu = document.getElementById('navMenu');
     menu.classList.remove('active');
 }
 
-// ==================== Cadastro ====================
+
 function handleSubmit(event) {
     event.preventDefault();
     const form = document.getElementById('volunteerForm');
     if(!form) return;
 
-    // Evita duplicidade da gravação
+    
     if(form.dataset.submitting === 'true') return;
     form.dataset.submitting = 'true';
 
     const nome = form.nome.value.trim();
     const email = form.email.value.trim();
 
-    // Verifica campos obrigatórios
+   
     if (!nome || !email) {
         alert('Por favor, preencha os campos Nome e Email.');
         return;
     }
 
-    // Coleta os valores do formulário
+    
     const formData = {
         nome,
         email,
@@ -55,22 +55,22 @@ function handleSubmit(event) {
     voluntarios.push(formData);
     localStorage.setItem('voluntarios', JSON.stringify(voluntarios));
 
-    // Mostra mensagem de sucesso
+    
     const successMessage = document.getElementById('successMessage');
     successMessage.classList.add('show');
     successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-    // Limpa formulário após 2 segundos
+    
     setTimeout(() => form.reset(), 2000);
 
-    // Esconde mensagem após 5 segundos
+    
     setTimeout(() => successMessage.classList.remove('show'), 5000);
 
-    // Atualiza a tabela de voluntários
+   
     exibirVoluntarios();
 }
 
-// ==================== Exibir Voluntários ====================
+
 function exibirVoluntarios() {
     const voluntarios = JSON.parse(localStorage.getItem('voluntarios') || '[]');
     const tabelaContainer = document.getElementById('tabelaVoluntarios');
@@ -101,7 +101,7 @@ function exibirVoluntarios() {
     tabelaContainer.innerHTML = html;
 }
 
-// ==================== Animação ao Scroll ====================
+
 window.addEventListener('scroll', () => {
     const cards = document.querySelectorAll('.card, .project-card');
     cards.forEach(card => {
@@ -114,7 +114,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Inicializa animações e mostra voluntários ao carregar
+
 document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.card, .project-card');
     cards.forEach(card => {
@@ -123,22 +123,14 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     });
 
-    // Mostra voluntários já cadastrados
+    
     exibirVoluntarios();
 });
-
-// ==================== Máscara de Telefone ====================
-
-///telefoneInput.addEventListener('input', function(e) {
- //let value = e.target.value.replace(/\D/g, '');
-//Limpa qualquer caractere que não seja número.
-//Limita a 11 dígitos.
-//Formata como (XX) XXXXX-XXXX conforme o usuário digita.
 
 const telefoneInput = document.getElementById('telefone');
 if (telefoneInput) {
     telefoneInput.addEventListener('input', function(e) {
-        let value = e.target.value.replace(/\D/g, '');//Limpa qualquer caractere que não seja número.
+        let value = e.target.value.replace(/\D/g, '');
 //Limita a 11 dígitos.
         if (value.length > 11) value = value.slice(0, 11);
 
@@ -154,7 +146,7 @@ if (telefoneInput) {
     });
 }
 
-// ==================== Limpa a tabela ====================
+
 function limparTabela(){
     const tabelaContainer = document.getElementById('tabelaVoluntarios');
 
@@ -162,11 +154,9 @@ function limparTabela(){
         tabelaContainer.innerHTML = '<p>Nenhum voluntário cadastrado.</p>';
     }
 
-    //se vc quiser apagar o localStorage tbm 
+  
     localStorage.removeItem('voluntarios');    
 }
 
-//mostrando a função para usar no html
-//windows = janela
-// Disponibiliza para ser chamado no HTML via onclick="limparTabela()".
+
 window.limparTabela = limparTabela;
